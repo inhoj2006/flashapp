@@ -22,5 +22,22 @@
   <button onclick="deleteAllCards()">🗑️ 전체 삭제</button>
 
   <script src="app.js"></script>
+  <style>
+#refresh-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+</style>
+
+<button id="refresh-btn" title="새로고침" onclick="location.reload()">⟳</button>
 </body>
 </html>
