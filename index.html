@@ -35,7 +35,7 @@
     localStorage.setItem('cards', JSON.stringify(updated));
     alert('모든 카드가 복습 대상으로 초기화되었습니다.');
 
-    / 복습 목록 갱신 필요하면 아래 함수도 호출 (있으면)
+    // 복습 목록 갱신 필요하면 아래 함수도 호출 (있으면)
     if (typeof renderDueCards === 'function') {
       renderDueCards();
     }
