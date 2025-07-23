@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="card">
+    <div id="question">질문 표시</div>
+    <button onclick="showAnswer()">정답 보기</button>
+    <div id="answer" style="display:none;">정답 표시</div>
+    <div id="buttons" style="display:none;">
+      <button onclick="grade(0)">틀림</button>
+      <button onclick="grade(1)">보통</button>
+      <button onclick="grade(2)">잘 앎</button>
+    </div>
+  </div>
+  <hr>
+  <button onclick="addCard()">➕ 카드 추가</button>
+  <button onclick="deleteAllCards()">🗑️ 전체 삭제</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
