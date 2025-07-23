@@ -22,6 +22,25 @@
   <button onclick="deleteAllCards()">🗑️ 전체 삭제</button>
 
   <script src="app.js"></script>
+  <script>
+  function resetAllDueDates() {
+    const cards = JSON.parse(localStorage.getItem('cards') || '[]');
+    const now = new Date().toISOString();
+
+    const updated = cards.map(card => ({
+      ...card,
+      dueDate: now
+    }));
+
+    localStorage.setItem('cards', JSON.stringify(updated));
+    alert('모든 카드가 복습 대상으로 초기화되었습니다.');
+
+    / 복습 목록 갱신 필요하면 아래 함수도 호출 (있으면)
+    if (typeof renderDueCards === 'function') {
+      renderDueCards();
+    }
+  }
+</script>
   <style>
 #refresh-btn {
   position: fixed;
@@ -39,5 +58,8 @@
 </style>
 
 <button id="refresh-btn" title="새로고침" onclick="location.reload()">⟳</button>
+  <button onclick="resetAllDueDates()" style="position: fixed; bottom: 20px; right: 20px; font-size: 14px;">
+  🔄 복습 초기화
+</button>
 </body>
 </html>
